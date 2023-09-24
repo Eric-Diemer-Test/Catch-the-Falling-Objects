@@ -15,7 +15,7 @@ public class EndUIDisplay : MonoBehaviour            //Attached to the EndGameCa
     public GameObject EndGameGO;
     public GameObject InfoPanelPrefab;
 
-    private InfoUIDisplay InfoUIDisplay;
+    private InfoUIDisplay infoUIDisplay;
 
     private void OnEnable()
     {
@@ -42,8 +42,8 @@ public class EndUIDisplay : MonoBehaviour            //Attached to the EndGameCa
             gameManager.ModeSelected = GameManager.GameModes.hard;
         }
 
-        GameObject GamePlayUIClone = Instantiate(GamePlayPrefab, this.transform.position, this.transform.rotation) as GameObject;
-        GamePlayUIClone.name = "Gameplay";       
+        GameObject gamePlayUIClone = Instantiate(GamePlayPrefab, this.transform.position, this.transform.rotation) as GameObject;
+        gamePlayUIClone.name = "Gameplay";       
 
         Destroy(EndGameGO);        
     }
@@ -57,7 +57,7 @@ public class EndUIDisplay : MonoBehaviour            //Attached to the EndGameCa
     {
         GameObject InfoUIClone = Instantiate(InfoPanelPrefab, this.transform.position, this.transform.rotation) as GameObject;
         InfoUIClone.name = button.name;
-        InfoUIDisplay = InfoUIClone.GetComponent<InfoUIDisplay>();
-        InfoUIDisplay.OnInsantiate(button.name);
+        infoUIDisplay = InfoUIClone.GetComponent<InfoUIDisplay>();
+        infoUIDisplay.OnInstantiate(button.name);
     }
 }

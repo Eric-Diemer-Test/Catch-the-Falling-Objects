@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  FallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
+  fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &648009597821045251
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -591,7 +591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  FallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
+  fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &2482267780837227934
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -681,7 +681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  FallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
+  fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &7492407199231887015
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -735,7 +735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &365030629252093268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  FallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
+  fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &2745132581172307888
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  FallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
+  fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &3768112330977498155
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1617,7 +1617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  FallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
+  fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &4307638704321191031
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1782,7 +1782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  FallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
+  fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &1764276938564786545
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2046,7 +2046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  FallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
+  fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &4826009393727904602
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2136,7 +2136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  FallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
+  fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &1629353898834729663
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2301,7 +2301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  FallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
+  fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &3916112895390115743
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2832,7 +2832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  FallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
+  fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &8496353108871156282
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2997,7 +2997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  FallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
+  fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &8852057801172044282
 CanvasRenderer:
   m_ObjectHideFlags: 0

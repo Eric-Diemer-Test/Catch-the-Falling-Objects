@@ -9,7 +9,7 @@ public class FallingObjectsSpawner : MonoBehaviour
     private GameManager gameManager;
 
     [SerializeField]
-    private GameObject FallingObjectsPrefab;
+    private GameObject fallingObjectsPrefab;
 
     private void OnEnable()
     {
@@ -45,7 +45,7 @@ public class FallingObjectsSpawner : MonoBehaviour
      * Spawn the object
      * Set all needed paramaters parent, Tag Name, Sprite, Name, Number Objects Spawned
      */
-    public void SpawnFallingObject()
+    private void SpawnFallingObject()
     {       
         if (gameManager.NumberObjectsSpawned < gameManager.MaxNumberObjectsSpawned[(int)gameManager.ModeSelected])
         {
@@ -55,12 +55,12 @@ public class FallingObjectsSpawner : MonoBehaviour
 
             if (rnd > gameManager.FallingObjectsFallingChance[(int)gameManager.ModeSelected])
             {
-                GameObject FallingObjectClone = Instantiate(FallingObjectsPrefab, this.transform.position, this.transform.rotation) as GameObject;
-                FallingObjectClone.transform.SetParent(GameObject.Find("FallingObjects").transform);
-                FallingObjectClone.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                FallingObjectClone.name = "Object" + gameManager.NumberObjectsSpawned;
-                FallingObjectClone.tag = GetObjectTag();
-                FallingObjectClone.GetComponent<Image>().sprite = GetObjectSprite(FallingObjectClone.tag);
+                GameObject fallingObjectClone = Instantiate(fallingObjectsPrefab, this.transform.position, this.transform.rotation) as GameObject;
+                fallingObjectClone.transform.SetParent(GameObject.Find("FallingObjects").transform);
+                fallingObjectClone.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                fallingObjectClone.name = "Object" + gameManager.NumberObjectsSpawned;
+                fallingObjectClone.tag = GetObjectTag();
+                fallingObjectClone.GetComponent<Image>().sprite = GetObjectSprite(fallingObjectClone.tag);
                 gameManager.NumberObjectsSpawned++;
             }
         }
@@ -72,11 +72,11 @@ public class FallingObjectsSpawner : MonoBehaviour
 
     /*
      * Get the Object Tag Based on the chances in the chance array for each mode
-     * Possible Edge Case if Lowest Chance is not the following:  Bass, Snake, Hook, Bream, Minnow
+     * Possible Edge Case if Lowest Chance is not in the following order:  Bass, Snake, Hook, Bream, Minnow
      */
-    public string GetObjectTag()
+    private string GetObjectTag()
     {
-        string TagName = "";
+        string tagName = "";
 
         int rnd = 0;
 
@@ -88,15 +88,15 @@ public class FallingObjectsSpawner : MonoBehaviour
             case GameManager.GameModes.easy:                            
                 if ((rnd < gameManager.FallingObjectsSpawnChancesEasy[2])) 
                 { //< 15 (Bass)
-                    TagName = "Bass";
+                    tagName = "Bass";
                 }
                 else if (rnd >= gameManager.FallingObjectsSpawnChancesEasy[0])  
                 { //>= 50 (Minnow)
-                    TagName = "Minnow";
+                    tagName = "Minnow";
                 }
                 else
                 { // 15 - 49 (Bream)
-                    TagName = "Bream";
+                    tagName = "Bream";
                 }
                 break;
 
@@ -105,25 +105,25 @@ public class FallingObjectsSpawner : MonoBehaviour
 
                 if ((rnd < gameManager.FallingObjectsSpawnChancesMedium[2]))
                 { //< 10 (Bass)
-                    TagName = "Bass";
+                    tagName = "Bass";
                 }
                 else if ((rnd >= gameManager.FallingObjectsSpawnChancesMedium[2]) && 
                     (rnd <= (gameManager.FallingObjectsSpawnChancesMedium[3] + gameManager.FallingObjectsSpawnChancesMedium[2])))
                 { // >+ 10 (Bass) && <= 20 + 10 (Bass + Snake)
-                    TagName = "Snake";
+                    tagName = "Snake";
                 }
                 else if ((rnd >= (gameManager.FallingObjectsSpawnChancesMedium[3] + gameManager.FallingObjectsSpawnChancesMedium[2])) 
                     && (rnd <= (gameManager.FallingObjectsSpawnChancesMedium[3] + gameManager.FallingObjectsSpawnChancesMedium[2] + gameManager.FallingObjectsSpawnChancesMedium[1])))
                 { // > 20 + 10 (Bass + Snake) && <= 10 + 20 + 25 (Bass + Snake + Bream)
-                    TagName = "Bream";
+                    tagName = "Bream";
                 }
                 else if ((rnd > (gameManager.FallingObjectsSpawnChancesMedium[3] + gameManager.FallingObjectsSpawnChancesMedium[2] + gameManager.FallingObjectsSpawnChancesMedium[1])))
                 { //  > (10 + 20 + 25) (Bass + Snake + Bream)
-                    TagName = "Minnow";
+                    tagName = "Minnow";
                 }
                 else
                 { //just for any logic errors or edge cases
-                    TagName = "Minnow";
+                    tagName = "Minnow";
                 }
                 break;
 
@@ -131,65 +131,65 @@ public class FallingObjectsSpawner : MonoBehaviour
             case GameManager.GameModes.hard:                            
                 if ((rnd < gameManager.FallingObjectsSpawnChancesMedium[2]))
                 { //< 10 (Bass)
-                    TagName = "Bass";
+                    tagName = "Bass";
                 }
                 else if ((rnd >= gameManager.FallingObjectsSpawnChancesHard[2]) &&
                     (rnd <= (gameManager.FallingObjectsSpawnChancesHard[3] + gameManager.FallingObjectsSpawnChancesHard[2])))
                 { // >+ 10 (Bass) && <= 15 + 10 (Bass + Snake)
-                    TagName = "Snake";
+                    tagName = "Snake";
                 }
                 else if ((rnd >= (gameManager.FallingObjectsSpawnChancesHard[3] + gameManager.FallingObjectsSpawnChancesHard[2]))
                     && (rnd <= (gameManager.FallingObjectsSpawnChancesHard[3] + gameManager.FallingObjectsSpawnChancesHard[2] + gameManager.FallingObjectsSpawnChancesHard[4])))
                 { // > 15 + 10 + 10 && <= 10 + 15 + 20 (Bass + Snake + Hook)
-                    TagName = "Hook";
+                    tagName = "Hook";
                 }
                 else if ((rnd >= (gameManager.FallingObjectsSpawnChancesHard[3] + gameManager.FallingObjectsSpawnChancesHard[2] + gameManager.FallingObjectsSpawnChancesHard[1]))
                     && (rnd <= (gameManager.FallingObjectsSpawnChancesHard[3] + gameManager.FallingObjectsSpawnChancesHard[2] 
                     + gameManager.FallingObjectsSpawnChancesHard[4] + gameManager.FallingObjectsSpawnChancesHard[1])))
                 { // > 15 + 10 + 10 && <= 10 + 15 + 20 + 25 (Bass + Snake + Hook + Bream)
-                    TagName = "Bream";
+                    tagName = "Bream";
                 }
                 else if ((rnd > ((gameManager.FallingObjectsSpawnChancesHard[3] + gameManager.FallingObjectsSpawnChancesHard[2]
                     + gameManager.FallingObjectsSpawnChancesHard[1] + gameManager.FallingObjectsSpawnChancesHard[4]))))
                 { //  > 10 + 15 + 20 + 25 (Bass + Snake + Bream + Hook)
-                    TagName = "Minnow";
+                    tagName = "Minnow";
                 }
                 else
                 { //just for any logic errors or edge cases
-                    TagName = "Minnow";
+                    tagName = "Minnow";
                 }
                 break;
         }         
 
-        return TagName;
+        return tagName;
     }
 
     /*
      * Get the Sprite based on the Tag Name
      */
-    public Sprite GetObjectSprite(String TagName)
+    private Sprite GetObjectSprite(String tagName)
     {
-        Sprite SpriteImage = null;
+        Sprite spriteImage = null;
 
-        switch (TagName)
+        switch (tagName)
         {
             case "Minnow":
-                SpriteImage = gameManager.FallingObjectsImages[0];
+                spriteImage = gameManager.FallingObjectsImages[0];
                 break;
             case "Bream":
-                SpriteImage = gameManager.FallingObjectsImages[1];
+                spriteImage = gameManager.FallingObjectsImages[1];
                 break;
             case "Bass":
-                SpriteImage = gameManager.FallingObjectsImages[2];
+                spriteImage = gameManager.FallingObjectsImages[2];
                 break;
             case "Snake":
-                SpriteImage = gameManager.FallingObjectsImages[3];
+                spriteImage = gameManager.FallingObjectsImages[3];
                 break;
             case "Hook":
-                SpriteImage = gameManager.FallingObjectsImages[4];
+                spriteImage = gameManager.FallingObjectsImages[4];
                 break;
         }
 
-        return SpriteImage;
+        return spriteImage;
     }
 }

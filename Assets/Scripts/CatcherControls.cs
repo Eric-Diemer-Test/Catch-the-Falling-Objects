@@ -68,7 +68,7 @@ public class CatcherControls : MonoBehaviour            //Attached to the Catche
     }
 
     /*
-     * Coroutine to remove the stun effect from catacher 
+     * Coroutine to remove the stun effect from catcher 
      */
     IEnumerator RemoveStun()
     {

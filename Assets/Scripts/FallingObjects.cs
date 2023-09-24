@@ -6,14 +6,14 @@ public class FallingObjects : MonoBehaviour
     [SerializeField]
     private GameManager gameManager; 
 
-    private Vector3 EndPosition = Vector3.zero;
+    private Vector3 endPosition = Vector3.zero;
 
-    private float LerpDuration = 0;
+    private float lerpDuration = 0;
 
     private void OnEnable()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        EndPosition = new Vector3(this.transform.position.x, -500.0f, this.transform.position.z);        
+        endPosition = new Vector3(this.transform.position.x, -500.0f, this.transform.position.z);        
 
         StartCoroutine(StartFall());
     }
@@ -28,35 +28,35 @@ public class FallingObjects : MonoBehaviour
         switch (this.gameObject.tag)
         {
             case "Minnow":
-                LerpDuration = (gameManager.FallingObjectsFallSpeeds[0] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]);
+                lerpDuration = (gameManager.FallingObjectsFallSpeeds[0] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]);
                 break;
 
             case "Bream":
-                LerpDuration = (gameManager.FallingObjectsFallSpeeds[1] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]); ;
+                lerpDuration = (gameManager.FallingObjectsFallSpeeds[1] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]); ;
                 break;
 
             case "Bass":
-                LerpDuration = (gameManager.FallingObjectsFallSpeeds[2] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]); ;
+                lerpDuration = (gameManager.FallingObjectsFallSpeeds[2] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]); ;
                 break;
 
             case "Snake":
-                LerpDuration = (gameManager.FallingObjectsFallSpeeds[3] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]); ;
+                lerpDuration = (gameManager.FallingObjectsFallSpeeds[3] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]); ;
                 break;
 
             case "Hook":
-                LerpDuration = (gameManager.FallingObjectsFallSpeeds[4] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]); ;
+                lerpDuration = (gameManager.FallingObjectsFallSpeeds[4] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]); ;
                 break;
         }
 
-        float TimeElapsed = 0;
+        float timeElapsed = 0;
 
-        while (TimeElapsed < LerpDuration)
+        while (timeElapsed < lerpDuration)
         {
-            this.transform.position = Vector3.Lerp(this.transform.position, EndPosition, TimeElapsed / LerpDuration);
-            TimeElapsed += Time.deltaTime;
+            this.transform.position = Vector3.Lerp(this.transform.position, endPosition, timeElapsed / lerpDuration);
+            timeElapsed += Time.deltaTime;
             yield return null;
         }
 
-        this.transform.position = EndPosition;        
+        this.transform.position = endPosition;        
     }    
 }

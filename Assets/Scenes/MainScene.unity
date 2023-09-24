@@ -332,9 +332,9 @@ MonoBehaviour:
   GameScore: 0
   NumberObjectsSpawned: 0
   CatcherMoveSpeed:
-  - 0.6
-  - 0.5
-  - 0.4
+  - 2
+  - 1.5
+  - 1.2
   FallingObjectsImages:
   - {fileID: 21300000, guid: 079fcfb510800b940aeea16c9300fd17, type: 3}
   - {fileID: 21300000, guid: 71f79a09a35c71346a79f6dd1d8f46c1, type: 3}

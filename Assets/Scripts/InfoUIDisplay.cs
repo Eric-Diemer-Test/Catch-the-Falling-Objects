@@ -14,12 +14,12 @@ public class InfoUIDisplay : MonoBehaviour            //Attached to the InfoCanv
     public TextMeshProUGUI TimerText;
 
     [Tooltip("Text Mesh Object of the Info Title Text")]
-    public TextMeshProUGUI InfoTitleText;        
+    public TextMeshProUGUI InfoTitleText;
 
     /*
-     * Start on instatiate set text, object based on which mode string is pass in
+     * Start on instantiate set text, object based on which mode string is pass in
      */
-    public void OnInsantiate(string WhichMode)
+    public void OnInstantiate(string WhichMode)
     {
         MediumInfoGO.SetActive(false);
         HardInfoGO.SetActive(false);

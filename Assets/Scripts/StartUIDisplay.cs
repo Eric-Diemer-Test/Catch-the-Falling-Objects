@@ -7,14 +7,13 @@ public class StartUIDisplay : MonoBehaviour            //Attached to the startme
     private GameManager gameManager;
 
     [Header("Canvas Variables")]
-    public GameObject StartMenuCanvasGO;    
-    public GameObject GamePlayCanvasGO;
+    public GameObject StartMenuCanvasGO;      
 
+    [Header("Prefab Variables")]
     public GameObject InfoPanelPrefab;
-
     public GameObject GamePlayPrefab;
 
-    private InfoUIDisplay InfoUIDisplay;  
+    private InfoUIDisplay infoUIDisplay;  
 
     // Start is called before the first frame update
     void Start()
@@ -41,8 +40,8 @@ public class StartUIDisplay : MonoBehaviour            //Attached to the startme
             gameManager.ModeSelected = GameManager.GameModes.hard;
         }
 
-        GameObject GamePlayUIClone = Instantiate(GamePlayPrefab, this.transform.position, this.transform.rotation) as GameObject;
-        GamePlayUIClone.name = "Gameplay";        
+        GameObject gamePlayUIClone = Instantiate(GamePlayPrefab, this.transform.position, this.transform.rotation) as GameObject;
+        gamePlayUIClone.name = "Gameplay";        
 
         Destroy(StartMenuCanvasGO);
     }
@@ -50,13 +49,13 @@ public class StartUIDisplay : MonoBehaviour            //Attached to the startme
     /*
     * Selecting the Info Button
     * Pass in the Button Object
-    * Instantiate the infopanelprefab
+    * instantiate the infopanelprefab
     */
     public void OnInfoSelect(Button button)
     {
-        GameObject InfoUIClone = Instantiate(InfoPanelPrefab, this.transform.position, this.transform.rotation) as GameObject;
-        InfoUIClone.name = button.name;
-        InfoUIDisplay = InfoUIClone.GetComponent<InfoUIDisplay>();
-        InfoUIDisplay.OnInsantiate(button.name);
+        GameObject infoUIClone = Instantiate(InfoPanelPrefab, this.transform.position, this.transform.rotation) as GameObject;
+        infoUIClone.name = button.name;
+        infoUIDisplay = infoUIClone.GetComponent<InfoUIDisplay>();
+        infoUIDisplay.OnInstantiate(button.name);
     }
 }

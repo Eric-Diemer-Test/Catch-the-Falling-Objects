@@ -1,5 +1,8 @@
 Instructions:
 
+Open the MainScene .. looks best at 1280 x 800 but looks good at all resolutions I tested.
+Used unity version 2022.3.5f1
+
 Start Menu:
 Click the yellow Circle I button next to any Mode Button for Information on that Mode
 Click on the red circle X button to close the Info Window
@@ -22,25 +25,28 @@ Click on the Easy, Medium, Hard buttons to start the Game
 
 Questions:
 Describe any important assumptions that you have made in your code.
-First I assumed this was more of a prototype.  Also assumed there was not need for addressables, json files, multiple scenes, sprite sheets, etc due to the size of the overall game
-I did however assume would want to give to a designer to tweak all the variables such as: spawn rate, spawn chance, objects speed, score, etc .. which is why they are arrays in the game manager.  
+First, I assumed this was for a prototype.  Also assumed there was no need for addressables, JSON files, multiple scenes, sprite sheets, etc due to the size of the game.
+I did assume you would want the ability to give a designer the ability to tweak all the variables such as: spawn rate, spawn chance, objects speed, score, etc .. which is why the variables are arrays in the game manager.  
 
 What edge cases have you considered in your code? What edge cases have you yet to handle?
-The biggest one is even noted in the code.  Possible Edge Case if Lowest Chance is not the following:  Bass, Snake, Hook, Bream, Minnow
+The biggest edge case is even commented in the code.  Possible Edge Case, if Lowest Chance is not in the following order:  Bass, Snake, Hook, Bream, Minnow
+To solve, copy array into another array and sort, then do the checking based on that array / indexes.  
 
 What are some things you would like to do if you had more time? 
-Like to have added an arcade mode that the fish would run away if hit a moving trigger close to the net.
-Also like to added if bigger fish eats smaller fish they are worth more points than both.  
-Would love to add animations instead of a lerp for the movement.  To slow on creating animations
-Sprite animations would have been amazing as well, however I am an horrible artist if you can't tell. 
+Add an arcade mode that the fish would run away if hit by a moving trigger close to the net.
+Add if bigger fish eats smaller fish they are worth more points than both.  
+Add animations instead of a lerp for the movement.  
+Sprite animations would have been amazing as well. 
+
  
 Is there anything you would have to change about the design of your current code to do these things? 
-A. Would of liked to have set up the vars as a json file so wouldn't have to update the game.  
-B. Would of liked to have it setup for animations for the movement already so scaling would be easier.
+A. Sett up the vars as a JSON file so you wouldn't have to update the game.  
+B. Have it setup for animations for the movement already, so scaling would be easier.
+C. Arcade Mode
 Give a rough outline of how you might implement these ideas. 
-A.  Have the json files loaded from local files instead of array.  A little more time consuming but then would have been easy to setup to load off a cdn
-B.  Have it play an unity animation instead of a lerp.  Also add a check if left or right side so can randomly play the right or left side animation to give more creativity for the fish movement.  
-Project Title: Unity Mini-Game - "Catch the Falling Objects"
+A.  JSON files load from local instead of array.  A little more time consuming but then would have been easy to setup to load off a CDN
+B.  Play an unity animation instead of a lerp.  Add a check if left or right side so can randomly play the right or left side animation to give more creativity for the fish movement.  
+C. In Arcade mode add power ups, fish run away, fish swimming in circles, etc
 
 Assignment:
 Objective:
@@ -96,4 +102,3 @@ In your GitHub repository, please include a Readme file addressing the following
 Describe any important assumptions that you have made in your code.
 What edge cases have you considered in your code? What edge cases have you yet to handle?
 What are some things you would like to do if you had more time? Is there anything you would have to change about the design of your current code to do these things? Give a rough outline of how you might implement these ideas.
-

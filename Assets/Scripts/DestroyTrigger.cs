@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DestoryTrigger : MonoBehaviour
+public class DestroyTrigger : MonoBehaviour
 {
     [SerializeField]
     private GameManager gameManager;     
