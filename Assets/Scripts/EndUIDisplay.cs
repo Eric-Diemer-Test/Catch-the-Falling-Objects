@@ -10,12 +10,16 @@ public class EndUIDisplay : MonoBehaviour            //Attached to the EndGameCa
     [Tooltip("Text Mesh Object of the Score Text")]
     public TextMeshProUGUI ScoreText;
 
-    [Header("Canvas Variables")]
-    public GameObject GamePlayCanvasGO;
-    public GameObject EndGameCanvas;
+    [Header("GameObject Variables")]
+    public GameObject GamePlayPrefab;
+    public GameObject EndGameGO;
+    public GameObject InfoPanelPrefab;
+
+    private InfoUIDisplay InfoUIDisplay;
 
     private void OnEnable()
-    {      
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         ScoreText.text = "Scored: " + gameManager.GameScore;
     }
 
@@ -38,7 +42,22 @@ public class EndUIDisplay : MonoBehaviour            //Attached to the EndGameCa
             gameManager.ModeSelected = GameManager.GameModes.hard;
         }
 
-        GamePlayCanvasGO.SetActive(true);
-        EndGameCanvas.SetActive(false);
+        GameObject GamePlayUIClone = Instantiate(GamePlayPrefab, this.transform.position, this.transform.rotation) as GameObject;
+        GamePlayUIClone.name = "Gameplay";       
+
+        Destroy(EndGameGO);        
+    }
+
+    /*
+    * Selecting the Info Button
+    * Pass in the Button Object
+    * Instantiate the infopanelprefab
+    */
+    public void OnInfoSelect(Button button)
+    {
+        GameObject InfoUIClone = Instantiate(InfoPanelPrefab, this.transform.position, this.transform.rotation) as GameObject;
+        InfoUIClone.name = button.name;
+        InfoUIDisplay = InfoUIClone.GetComponent<InfoUIDisplay>();
+        InfoUIDisplay.OnInsantiate(button.name);
     }
 }

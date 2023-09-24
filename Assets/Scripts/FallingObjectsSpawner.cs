@@ -13,14 +13,24 @@ public class FallingObjectsSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        SpawnFallingObject();
-        StartCoroutine(SpawnDelay());
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        StartCoroutine(FirstSpawnDelay());
+        StartCoroutine(SpawnLoop());
     }
 
     /*
-     * Spawn Delay coroutine
+    * First spawn of objects with a slight delay
+    */
+    IEnumerator FirstSpawnDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SpawnFallingObject();
+    }
+
+    /*
+     * Spawn Loop coroutine
      */
-    IEnumerator SpawnDelay()
+    IEnumerator SpawnLoop()
     {
         int rnd = 0;
 
@@ -28,7 +38,7 @@ public class FallingObjectsSpawner : MonoBehaviour
 
         yield return new WaitForSeconds(rnd);
         SpawnFallingObject();
-        StartCoroutine(SpawnDelay());
+        StartCoroutine(SpawnLoop());
     }
 
     /*
@@ -45,11 +55,12 @@ public class FallingObjectsSpawner : MonoBehaviour
 
             if (rnd > gameManager.FallingObjectsFallingChance[(int)gameManager.ModeSelected])
             {
-                GameObject Clone = Instantiate(FallingObjectsPrefab, this.transform.position, this.transform.rotation) as GameObject;
-                Clone.transform.SetParent(GameObject.Find("FallingObjects").transform);
-                Clone.name = "Object" + gameManager.NumberObjectsSpawned;
-                Clone.tag = GetObjectTag();
-                Clone.GetComponent<Image>().sprite = GetObjectSprite(Clone.tag);
+                GameObject FallingObjectClone = Instantiate(FallingObjectsPrefab, this.transform.position, this.transform.rotation) as GameObject;
+                FallingObjectClone.transform.SetParent(GameObject.Find("FallingObjects").transform);
+                FallingObjectClone.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                FallingObjectClone.name = "Object" + gameManager.NumberObjectsSpawned;
+                FallingObjectClone.tag = GetObjectTag();
+                FallingObjectClone.GetComponent<Image>().sprite = GetObjectSprite(FallingObjectClone.tag);
                 gameManager.NumberObjectsSpawned++;
             }
         }

@@ -65,7 +65,19 @@ public class GameManager : MonoBehaviour        //attached to the GameManager ob
     [Tooltip("Objects Delay in spawning .5 the value is min and max is 1.5 the value")]
     public float[] FallingObjectsIntervals = null;
 
+    [Tooltip("Increase speed per mode value is 1 is same speed less than 1 speeds up more than 1 slows down")]
+    public float[] FallingObjectsSpeed = null;
+
     [Header("How many objects can be spawned at a time")]
     public int[] MaxNumberObjectsSpawned = null;
+
+    public GameObject StartMenuPrefab;   
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        GameObject StartUIClone = Instantiate(StartMenuPrefab, this.transform.position, this.transform.rotation) as GameObject;
+        StartUIClone.name = "StartMenu";
+    }
 }
   

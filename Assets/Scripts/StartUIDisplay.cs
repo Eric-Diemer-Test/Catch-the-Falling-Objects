@@ -7,28 +7,19 @@ public class StartUIDisplay : MonoBehaviour            //Attached to the startme
     private GameManager gameManager;
 
     [Header("Canvas Variables")]
-    public GameObject StartMenuCanvasGO;
-    public GameObject EndMenuCanvasGO;
+    public GameObject StartMenuCanvasGO;    
     public GameObject GamePlayCanvasGO;
 
-    public GameObject InfoPanelGO;
-    public GameObject MediumInfoGO;
-    public GameObject HardInfoGO;
+    public GameObject InfoPanelPrefab;
 
-    [Tooltip("Text Mesh Object of the Timer Text")]
-    public TextMeshProUGUI TimerText;
+    public GameObject GamePlayPrefab;
 
-    [Tooltip("Text Mesh Object of the Info Title Text")]
-    public TextMeshProUGUI InfoTitleText;
+    private InfoUIDisplay InfoUIDisplay;  
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-
-        StartMenuCanvasGO.SetActive(true);
-        EndMenuCanvasGO.SetActive(false);
-        GamePlayCanvasGO.SetActive(false);
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();        
     }
 
     /*
@@ -49,48 +40,23 @@ public class StartUIDisplay : MonoBehaviour            //Attached to the startme
         {
             gameManager.ModeSelected = GameManager.GameModes.hard;
         }
-        
-        StartMenuCanvasGO.SetActive(false);      
-        GamePlayCanvasGO.SetActive(true);
-    }   
+
+        GameObject GamePlayUIClone = Instantiate(GamePlayPrefab, this.transform.position, this.transform.rotation) as GameObject;
+        GamePlayUIClone.name = "Gameplay";        
+
+        Destroy(StartMenuCanvasGO);
+    }
 
     /*
     * Selecting the Info Button
     * Pass in the Button Object
+    * Instantiate the infopanelprefab
     */
     public void OnInfoSelect(Button button)
     {
-        Debug.Log("Name is " + button.name);
-
-        MediumInfoGO.SetActive(false);
-        HardInfoGO.SetActive(false);
-
-        if (button.name == "EasyInfo")
-        {
-            TimerText.text = "2 minutes";
-            InfoTitleText.text = "Easy Mode Info";
-        }
-        else if (button.name == "MediumInfo")
-        {
-            TimerText.text = "1 minute";
-            InfoTitleText.text = "Medium Mode Info";
-            MediumInfoGO.SetActive(true);          
-        }
-        else 
-        {
-            TimerText.text = "1 minute";
-            InfoTitleText.text = "Hard Mode Info";
-            HardInfoGO.SetActive(true);
-        }
-
-        InfoPanelGO.SetActive(true);
-    }
-
-    /*
-    * Selecting the Close Info Button
-    */
-    public void OnInfoClose()
-    {
-        InfoPanelGO.SetActive(false);
+        GameObject InfoUIClone = Instantiate(InfoPanelPrefab, this.transform.position, this.transform.rotation) as GameObject;
+        InfoUIClone.name = button.name;
+        InfoUIDisplay = InfoUIClone.GetComponent<InfoUIDisplay>();
+        InfoUIDisplay.OnInsantiate(button.name);
     }
 }

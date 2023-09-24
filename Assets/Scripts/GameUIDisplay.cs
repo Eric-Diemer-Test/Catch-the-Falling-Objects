@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class GameUIDisplay : MonoBehaviour            //Attached to the UI game object
+public class GameUIDisplay : MonoBehaviour            //Attached to the Game play canvas prefab game object
 {
     [SerializeField]
     private GameManager gameManager;
@@ -14,8 +14,8 @@ public class GameUIDisplay : MonoBehaviour            //Attached to the UI game 
     
     private float Timer;
 
-    [Header("Canvas Variables")]
-    public GameObject EndMenuCanvasGO;
+    [Header("GameObject Variables")]
+    public GameObject EndGamePrefab;
     public GameObject GamePlayCanvasGO;
 
     public GameObject MediumObjectsGO;
@@ -27,6 +27,7 @@ public class GameUIDisplay : MonoBehaviour            //Attached to the UI game 
 
     private void OnEnable()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         isGameOver = false;
         gameManager.GameScore = 0;
         MediumObjectsGO.SetActive(false);
@@ -86,18 +87,13 @@ public class GameUIDisplay : MonoBehaviour            //Attached to the UI game 
      * */
     public void OnGameOver()
     {
-        isGameOver = true;
-        GamePlayCanvasGO.SetActive(false);
-        EndMenuCanvasGO.SetActive(true);
-
-        //destory all left over falling objects
-        foreach (Transform child in FallingObectGO.transform)
-        {
-            Destroy(child.gameObject);
-        }
-
-        gameManager.NumberObjectsSpawned = 0;        
+        gameManager.NumberObjectsSpawned = 0;
 
         gameManager.IsStunned = false;
+
+        GameObject EndGameUIClone = Instantiate(EndGamePrefab, new Vector3(0f,0f,0f), new Quaternion(0f, 0f, 0f, 0f)) as GameObject;
+        EndGameUIClone.name = "EndGame";
+
+        Destroy(GamePlayCanvasGO);       
     }
 }
