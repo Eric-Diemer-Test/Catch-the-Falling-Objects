@@ -3,12 +3,12 @@ using UnityEngine;
 public class DestroyTrigger : MonoBehaviour
 {
     [SerializeField]
-    private GameData gameData;     
+    private GameManager gameManager;     
 
     // Start is called before the first frame update
     void Start()
     {
-       gameData = GameObject.Find("GameData").GetComponent<GameData>();      
+       gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();      
     }
 
     /*
@@ -16,7 +16,7 @@ public class DestroyTrigger : MonoBehaviour
     */
     private void OnTriggerEnter(Collider other)
     {       
-        gameData.NumberObjectsSpawned--;
+        gameManager.NumberObjectsSpawned--;
         Destroy(other.gameObject);
     }
 }

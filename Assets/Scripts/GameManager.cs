@@ -71,6 +71,9 @@ public class GameManager : MonoBehaviour        //attached to the GameManager ob
     [Header("How many objects can be spawned at a time")]
     public int[] MaxNumberObjectsSpawned = null;
 
+    [Tooltip("Stun Duration")]
+    public float StunDur = 3.0f;
+
     public GameObject StartMenuPrefab;   
 
     // Start is called before the first frame update

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class EndUIDisplay : MonoBehaviour            //Attached to the EndGameCanvas game object
 {
     [SerializeField]
-    private GameData gameData;
+    private GameManager gameManager;
 
     [Tooltip("Text Mesh Object of the Score Text")]
     public TextMeshProUGUI ScoreText;
@@ -22,8 +22,8 @@ public class EndUIDisplay : MonoBehaviour            //Attached to the EndGameCa
      */
     private void OnEnable()
     {
-        gameData = GameObject.Find("GameData").GetComponent<GameData>();
-        ScoreText.text = "Scored: " + gameData.GameScore;
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        ScoreText.text = "Scored: " + gameManager.GameScore;
     }
 
     /*
@@ -34,15 +34,15 @@ public class EndUIDisplay : MonoBehaviour            //Attached to the EndGameCa
     {
         if (button.name == "EasyModeButton")
         {
-            gameData.ModeSelected = GameData.GameModes.easy;
+            gameManager.ModeSelected = GameManager.GameModes.easy;
         }
         else if (button.name == "MediumModeButton")
         {
-            gameData.ModeSelected = GameData.GameModes.medium;
+            gameManager.ModeSelected = GameManager.GameModes.medium;
         }
         else
         {
-            gameData.ModeSelected = GameData.GameModes.hard;
+            gameManager.ModeSelected = GameManager.GameModes.hard;
         }
 
         GameObject gamePlayUIClone = Instantiate(GamePlayPrefab, this.transform.position, this.transform.rotation) as GameObject;

@@ -11,11 +11,11 @@ using Application = UnityEngine.Application;
 public class FirebaseScript : MonoBehaviour
 {
     [SerializeField]
-    private GameData gameData;
+    private GameManager gameManager;
 
     public void Start()
     {
-        gameData = GameObject.Find("GameData").GetComponent<GameData>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         GetEachFishImage();       
     }
 
@@ -32,7 +32,7 @@ public class FirebaseScript : MonoBehaviour
         StorageReference imagesRef = storageRef.Child("FIshImages");
 
         //since there is no listall function for firebase for Unity editor and only for IOS / Android
-        foreach (Sprite Images in gameData.FallingObjectsImages)
+        foreach (Sprite Images in gameManager.FallingObjectsImages)
         {
             string filename = Images.name + ".png";
             StorageReference fishRef = imagesRef.Child(filename);
@@ -50,12 +50,12 @@ public class FirebaseScript : MonoBehaviour
         fishRef.GetFileAsync(localFish).ContinueWithOnMainThread(task => {
             if (!task.IsFaulted && !task.IsCanceled)
             {
-                Debug.Log("File downloaded.");
+                Debug.Log( filename + " downloaded.");
             }
             else
 
             {
-                Debug.Log("downloaded failed.");
+                Debug.Log( filename + "download failed.");
             }
         });
     }

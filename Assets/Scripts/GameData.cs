@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameData : MonoBehaviour      //attached to the GameData object in MainScene
+public class GameData : MonoBehaviour      //attached to the GameManager object in MainScene
 {    
     [Header("Global Variables")]
     [Tooltip("Flag for if catcher is stunned or not")]
