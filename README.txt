@@ -1,3 +1,7 @@
+TODO:
+Change the Fish to it's own class
+Add all fish data into a json file on firebase
+
 Instructions:
 
 Open the MainScene .. looks best at 1280 x 800 but looks good at all resolutions I tested.
