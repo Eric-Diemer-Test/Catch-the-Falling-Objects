@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class InfoUIDisplay : MonoBehaviour            //Attached to the InfoCanvas Prefab game object
+public class InfoUIDisplay : MonoBehaviour             //Attached to the InfoCanvas Prefab game object
 {
     [Header("GameObject Variables")]
     public GameObject InfoPanelGO;
@@ -44,7 +44,7 @@ public class InfoUIDisplay : MonoBehaviour            //Attached to the InfoCanv
     }
 
     /*
-    * Selecting the Close Info Button
+    * On Selecting the Close Info Button
     */
     public void OnInfoClose()
     {

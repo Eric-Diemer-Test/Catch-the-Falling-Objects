@@ -3,17 +3,20 @@ using UnityEngine;
 public class DestroyTrigger : MonoBehaviour
 {
     [SerializeField]
-    private GameManager gameManager;     
+    private GameData gameData;     
 
     // Start is called before the first frame update
     void Start()
     {
-       gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();      
-    }   
+       gameData = GameObject.Find("GameData").GetComponent<GameData>();      
+    }
 
+    /*
+    * On trigger event to destroy object
+    */
     private void OnTriggerEnter(Collider other)
     {       
-        gameManager.NumberObjectsSpawned--;
+        gameData.NumberObjectsSpawned--;
         Destroy(other.gameObject);
     }
 }

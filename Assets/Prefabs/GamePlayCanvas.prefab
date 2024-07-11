@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496356ad16d430744b528dc0ab2dd4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &648009597821045251
 CanvasRenderer:
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496356ad16d430744b528dc0ab2dd4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &2482267780837227934
 CanvasRenderer:
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496356ad16d430744b528dc0ab2dd4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &7492407199231887015
 CanvasRenderer:
@@ -815,7 +815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496356ad16d430744b528dc0ab2dd4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &2745132581172307888
 CanvasRenderer:
@@ -1222,8 +1222,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Time: 0:00'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1451,7 +1451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496356ad16d430744b528dc0ab2dd4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &3768112330977498155
 CanvasRenderer:
@@ -1616,7 +1616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496356ad16d430744b528dc0ab2dd4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &4307638704321191031
 CanvasRenderer:
@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496356ad16d430744b528dc0ab2dd4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &1764276938564786545
 CanvasRenderer:
@@ -1871,7 +1871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c7b38d01315c04984e663d815e3d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
 --- !u!54 &6350818253543709069
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496356ad16d430744b528dc0ab2dd4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &4826009393727904602
 CanvasRenderer:
@@ -2135,7 +2135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496356ad16d430744b528dc0ab2dd4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &1629353898834729663
 CanvasRenderer:
@@ -2300,7 +2300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496356ad16d430744b528dc0ab2dd4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &3916112895390115743
 CanvasRenderer:
@@ -2462,7 +2462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0918766a89ea2f941802b1323b649646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   ScoreText: {fileID: 8033884312048850605}
   TimerText: {fileID: 3194270878909069558}
   EndGamePrefab: {fileID: 4898681439484996873, guid: 3613ae48121818d4b906dc9f2d862f44, type: 3}
@@ -2508,7 +2508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -333}
+  m_AnchoredPosition: {x: 0, y: -328.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &543113272936656950
@@ -2561,7 +2561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8577d808ceb67a4b97b9bc045fccbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
 --- !u!54 &9178086165834936880
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2831,7 +2831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496356ad16d430744b528dc0ab2dd4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &8496353108871156282
 CanvasRenderer:
@@ -2996,7 +2996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496356ad16d430744b528dc0ab2dd4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameData: {fileID: 0}
   fallingObjectsPrefab: {fileID: 2181891029734860508, guid: c8e51ec24cd2e3a40b3b0b5d3e4f7d37, type: 3}
 --- !u!222 &8852057801172044282
 CanvasRenderer:
@@ -3103,8 +3103,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: 000'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

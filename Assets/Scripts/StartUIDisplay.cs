@@ -1,10 +1,9 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class StartUIDisplay : MonoBehaviour            //Attached to the startmenucanvas game object
 {   
-    private GameManager gameManager;
+    private GameData gameData;
 
     [Header("Canvas Variables")]
     public GameObject StartMenuCanvasGO;      
@@ -18,7 +17,7 @@ public class StartUIDisplay : MonoBehaviour            //Attached to the startme
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();        
+        gameData = GameObject.Find("GameData").GetComponent<GameData>();        
     }
 
     /*
@@ -29,15 +28,15 @@ public class StartUIDisplay : MonoBehaviour            //Attached to the startme
     {
         if (button.name == "EasyModeButton")
         {
-            gameManager.ModeSelected = GameManager.GameModes.easy;
+            gameData.ModeSelected = GameData.GameModes.easy;
         }
         else if (button.name == "MediumModeButton")
         {
-            gameManager.ModeSelected = GameManager.GameModes.medium;
+            gameData.ModeSelected = GameData.GameModes.medium;
         }
         else
         {
-            gameManager.ModeSelected = GameManager.GameModes.hard;
+            gameData.ModeSelected = GameData.GameModes.hard;
         }
 
         GameObject gamePlayUIClone = Instantiate(GamePlayPrefab, this.transform.position, this.transform.rotation) as GameObject;

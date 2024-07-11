@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "111336503272",
+    "project_id": "catch-the-fish-test",
+    "storage_bucket": "catch-the-fish-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111336503272:android:8d50dfc000a4ca3825965d",
+        "android_client_info": {
+          "package_name": "com.chaoshappenz.catchthefish"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO4vxCrLgTHZJxfrKIvmz1Sfy_uFyHJxc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

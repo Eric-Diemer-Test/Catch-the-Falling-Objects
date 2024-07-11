@@ -4,7 +4,7 @@ using UnityEngine;
 public class FallingObjects : MonoBehaviour
 {
     [SerializeField]
-    private GameManager gameManager; 
+    private GameData gameData; 
 
     private Vector3 endPosition = Vector3.zero;
 
@@ -12,7 +12,7 @@ public class FallingObjects : MonoBehaviour
 
     private void OnEnable()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameData = GameObject.Find("GameData").GetComponent<GameData>();
         endPosition = new Vector3(this.transform.position.x, -500.0f, this.transform.position.z);        
 
         StartCoroutine(StartFall());
@@ -28,23 +28,23 @@ public class FallingObjects : MonoBehaviour
         switch (this.gameObject.tag)
         {
             case "Minnow":
-                lerpDuration = (gameManager.FallingObjectsFallSpeeds[0] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]);
+                lerpDuration = (gameData.FallingObjectsFallSpeeds[0] * gameData.FallingObjectsSpeed[(int)gameData.ModeSelected]);
                 break;
 
             case "Bream":
-                lerpDuration = (gameManager.FallingObjectsFallSpeeds[1] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]); ;
+                lerpDuration = (gameData.FallingObjectsFallSpeeds[1] * gameData.FallingObjectsSpeed[(int)gameData.ModeSelected]); ;
                 break;
 
             case "Bass":
-                lerpDuration = (gameManager.FallingObjectsFallSpeeds[2] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]); ;
+                lerpDuration = (gameData.FallingObjectsFallSpeeds[2] * gameData.FallingObjectsSpeed[(int)gameData.ModeSelected]); ;
                 break;
 
             case "Snake":
-                lerpDuration = (gameManager.FallingObjectsFallSpeeds[3] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]); ;
+                lerpDuration = (gameData.FallingObjectsFallSpeeds[3] * gameData.FallingObjectsSpeed[(int)gameData.ModeSelected]); ;
                 break;
 
             case "Hook":
-                lerpDuration = (gameManager.FallingObjectsFallSpeeds[4] * gameManager.FallingObjectsSpeed[(int)gameManager.ModeSelected]); ;
+                lerpDuration = (gameData.FallingObjectsFallSpeeds[4] * gameData.FallingObjectsSpeed[(int)gameData.ModeSelected]); ;
                 break;
         }
 

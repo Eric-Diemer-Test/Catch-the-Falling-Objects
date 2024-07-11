@@ -4,7 +4,7 @@ using UnityEngine;
 public class GameUIDisplay : MonoBehaviour            //Attached to the Game play canvas prefab game object
 {
     [SerializeField]
-    private GameManager gameManager;
+    private GameData gameData;
 
     [Tooltip("Text Mesh Object of the Score Text")]
     public TextMeshProUGUI ScoreText;
@@ -27,23 +27,23 @@ public class GameUIDisplay : MonoBehaviour            //Attached to the Game pla
 
     private void OnEnable()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameData = GameObject.Find("GameData").GetComponent<GameData>();
         isGameOver = false;
-        gameManager.GameScore = 0;
+        gameData.GameScore = 0;
         MediumObjectsGO.SetActive(false);
         HardObjectsGO.SetActive(false);      
 
         //set the display timers based on game mode
-        if (gameManager.ModeSelected == GameManager.GameModes.easy)
+        if (gameData.ModeSelected == GameData.GameModes.easy)
         {
             timer = 120;
         }
-        else if (gameManager.ModeSelected == GameManager.GameModes.medium)
+        else if (gameData.ModeSelected == GameData.GameModes.medium)
         {
             timer = 60;
             MediumObjectsGO.SetActive(true);
         }
-        else if (gameManager.ModeSelected == GameManager.GameModes.hard)
+        else if (gameData.ModeSelected == GameData.GameModes.hard)
         {
             timer = 60;
             HardObjectsGO.SetActive(true);
@@ -53,7 +53,7 @@ public class GameUIDisplay : MonoBehaviour            //Attached to the Game pla
     // Update is called once per frame
     void Update()
     {
-        ScoreText.text = "Score: " + gameManager.GameScore;
+        ScoreText.text = "Score: " + gameData.GameScore;
         OnCountDown();
     }
 
@@ -87,9 +87,9 @@ public class GameUIDisplay : MonoBehaviour            //Attached to the Game pla
      * */
     private void OnGameOver()
     {
-        gameManager.NumberObjectsSpawned = 0;
+        gameData.NumberObjectsSpawned = 0;
 
-        gameManager.IsStunned = false;
+        gameData.IsStunned = false;
 
         GameObject endGameUIClone = Instantiate(EndGamePrefab, new Vector3(0f,0f,0f), new Quaternion(0f, 0f, 0f, 0f)) as GameObject;
         endGameUIClone.name = "EndGame";
